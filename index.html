@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ngọc's Laptop — Private Archive</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&display=swap">
+<style>
+:root{--bg:#0e0f12;--panel:#17191e;--line:#2b2e35;--tx:#e8e4da;--mu:#8d8a82;--gold:#b89b5e;--bad:#b4574f;--ok:#7fa88a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+#app{min-height:100%;display:flex;flex-direction:column;animation:fi .5s}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.wrap{flex:1;display:flex;flex-direction:column;justify-content:center;padding:28px 22px;max-width:480px;width:100%;margin:0 auto}
+.c{text-align:center}
+.mark{font-size:44px;color:var(--gold);margin-bottom:18px}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:38px;letter-spacing:.08em;margin:0 0 6px}
+.sub{color:var(--mu);font-size:12px;letter-spacing:.32em;margin-bottom:44px}
+.btn{display:block;width:100%;min-height:52px;border:1px solid var(--gold);background:transparent;color:var(--gold);font:600 13px Inter,sans-serif;letter-spacing:.2em;border-radius:3px;cursor:pointer;padding:14px}
+.btn:active{background:#b89b5e22}.btn.fill{background:var(--gold);color:#14110a}.btn.dim{border-color:var(--line);color:var(--mu)}
+.btn:disabled{opacity:.35}
+.btn+.btn{margin-top:12px}
+input{width:100%;min-height:52px;background:var(--panel);border:1px solid var(--line);color:var(--tx);font:500 18px Inter,sans-serif;letter-spacing:.3em;text-align:center;border-radius:3px;margin:22px 0 14px;outline:none}
+input:focus{border-color:var(--gold)}
+.lk{font-size:12px;letter-spacing:.3em;color:var(--mu)}
+.err{color:var(--bad);font-size:12px;letter-spacing:.2em;min-height:40px;line-height:1.7;margin-bottom:6px}
+.hint{margin-top:34px;padding-top:20px;border-top:1px solid var(--line)}
+.hl{font-size:10px;letter-spacing:.3em;color:var(--gold);margin-bottom:12px}
+.slots{display:flex;justify-content:center;gap:6px}.slots i{width:22px;height:2px;background:var(--mu);display:block;margin-top:14px}
+.hc{font-size:11px;letter-spacing:.2em;color:var(--mu);margin:10px 0 14px}
+.hint p{margin:0;font-size:19px;font-style:italic;line-height:1.4;color:var(--tx)}
+.shake{animation:sh .4s}@keyframes sh{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.chk{width:74px;height:74px;margin:0 auto 20px}.chk circle,.chk path{fill:none;stroke:var(--ok);stroke-width:2.5;stroke-dasharray:200;stroke-dashoffset:200;animation:dr .8s forwards}.chk path{animation-delay:.3s}
+@keyframes dr{to{stroke-dashoffset:0}}
+.top{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:5}
+.ib{min-width:44px;min-height:44px;border:1px solid var(--line);background:var(--panel);color:var(--tx);border-radius:3px;font-size:18px;cursor:pointer}
+.top .t{flex:1;font-size:11px;letter-spacing:.2em;color:var(--mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
+.ah{padding:26px 20px 8px;max-width:520px;margin:0 auto;width:100%}
+.ah h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;letter-spacing:.06em;margin:0 0 4px;font-weight:600}
+.ah p{margin:0;color:var(--gold);font-size:11px;letter-spacing:.3em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 20px;max-width:520px;margin:0 auto;width:100%}
+.card{min-height:128px;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:14px;text-align:left;color:var(--tx);cursor:pointer;display:flex;flex-direction:column;justify-content:space-between;position:relative;font-family:inherit}
+.card:active{border-color:var(--gold)}
+.card .f{font-size:10px;color:var(--mu);letter-spacing:.12em}
+.card .ic{font-size:26px;color:var(--gold)}
+.card .n{font-size:12px;letter-spacing:.14em;font-weight:600}
+.card .st{position:absolute;top:12px;right:12px;font-size:9px;letter-spacing:.15em;color:var(--ok)}
+.foot{padding:18px;text-align:center;font-size:10px;letter-spacing:.25em;color:#5d5b55;line-height:1.9}
+.q{font-size:13px;letter-spacing:.2em;margin:6px 0 20px;color:var(--mu)}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.sp{min-height:52px;background:var(--panel);border:1px solid var(--line);color:var(--tx);font:600 14px Inter,sans-serif;letter-spacing:.12em;border-radius:3px;cursor:pointer}
+.sp.on{border-color:var(--gold);color:var(--gold);background:#b89b5e18}
+.sheet{position:fixed;inset:0;background:#000b;z-index:20;display:flex;align-items:flex-end}
+.sh{background:var(--panel);border-top:1px solid var(--gold);width:100%;max-height:85%;overflow:auto;padding:18px 20px calc(18px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto}
+.ar{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}.ar .i{font-size:24px;color:var(--gold);width:30px;text-align:center}.ar b{font-size:12px;letter-spacing:.15em}.ar p{margin:4px 0 0;color:var(--mu);font-size:13px;line-height:1.5}
+.unl{animation:fi .6s}
+/* viewer */
+.vw{height:100vh;height:100dvh;display:flex;flex-direction:column;background:#26282d}
+.sc{flex:1;overflow:auto;padding:12px 8px;touch-action:pan-x pan-y pinch-zoom;-webkit-overflow-scrolling:touch}
+.pw{margin:0 auto;position:relative}
+.paper{width:595px;min-height:842px;background:#f6f2e8;color:#23211c;font-family:"Cormorant Garamond",Georgia,serif;font-size:14.5px;line-height:1.45;padding:44px 46px 60px;position:absolute;left:0;top:0;transform-origin:top left;box-shadow:0 6px 30px #0008;display:flex;flex-direction:column}
+.lh{display:flex;justify-content:space-between;border-bottom:2px double #23211c;padding-bottom:10px;margin-bottom:16px}
+.lh .o{font-size:19px;font-weight:600;letter-spacing:.06em}.lh .os{font:500 8px Inter,sans-serif;letter-spacing:.2em;color:#6a665c;margin-top:3px}.lh .r{text-align:right;font:500 8.5px Inter,sans-serif;color:#555;line-height:1.7}
+.cf{font:600 8px Inter,sans-serif;letter-spacing:.25em;color:#8a2f28;border:1px solid #8a2f28;display:inline-block;padding:2px 7px;margin-bottom:12px}
+.paper h3{font-size:20px;letter-spacing:.08em;text-align:center;margin:6px 0 14px;font-weight:600;text-transform:uppercase}
+.paper h4{font:600 9px Inter,sans-serif;letter-spacing:.2em;margin:16px 0 6px;color:#6a665c;text-transform:uppercase}
+.paper table{width:100%;border-collapse:collapse;font-size:13.5px;margin:4px 0}
+.paper td,.paper th{border:1px solid #bdb6a4;padding:5px 8px;text-align:left;vertical-align:top}
+.paper th{background:#e9e3d3;font:600 8.5px Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.paper td.k{width:34%;background:#efe9da;font:500 9px Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#5a564c}
+.paper .r{text-align:right}
+.paper p{margin:6px 0}
+.sgs{display:flex;gap:20px;margin-top:26px}.sgb{flex:1;border-top:1px solid #23211c;padding-top:4px;font:500 8.5px Inter,sans-serif;letter-spacing:.1em;color:#555;position:relative}
+.sig{font:600 24px "Dancing Script",cursive;color:#1d3a6e;position:absolute;top:-30px;left:6px;transform:rotate(-4deg)}
+.stamp{position:absolute;right:46px;border:3px double #8a2f28;color:#8a2f28;font:600 10px Inter,sans-serif;letter-spacing:.15em;text-align:center;padding:10px 14px;transform:rotate(-9deg);opacity:.75;border-radius:4px;line-height:1.5}
+.pf{margin-top:auto;padding-top:24px;display:flex;justify-content:space-between;font:500 8px Inter,sans-serif;letter-spacing:.14em;color:#777;border-top:1px solid #cfc8b6}
+.small{font-size:11.5px;color:#555}
+.bar{display:flex;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:var(--bg);border-top:1px solid var(--line);align-items:center}
+.bar .pg{flex:1;text-align:center;font-size:11px;letter-spacing:.2em;color:var(--mu)}
+</style></head><body><div id="app"></div>
+<script>
+/* ============ GAME CONFIG — edit here ============ */
+const CONFIG={password:"ZUGZWANG",hint:"Bất kể đi nước cờ nào, cũng là nước cờ chết",suspects:["ÁNH","BÌNH","CÔNG","DUNG","ETHAN","GIANG"],owner:"NGỌC"};
+
+const archetypes=[
+ {name:"THE INNOCENT",icon:"☼",suspect:"ÁNH",desc:"Optimistic and trusting. Wants to be good, seen as pure, and to keep life simple and safe. Fears being punished for doing something wrong."},
+ {name:"THE LOVER",icon:"♡",suspect:"BÌNH",desc:"Driven by devotion, intimacy and attachment. Gives everything to the bond that matters most. Fears being unwanted or alone."},
+ {name:"THE CREATOR",icon:"✎",suspect:"CÔNG",desc:"Imaginative and perfectionist. Builds something of lasting value and refuses to be ordinary. Fears mediocrity and exposure of flaws."},
+ {name:"THE SAGE",icon:"✧",suspect:"DUNG",desc:"Seeks truth and knowledge. Analytical, patient, trusts understanding over impulse. Fears ignorance and being deceived."},
+ {name:"THE OUTLAW",icon:"⚔",suspect:"ETHAN",desc:"Rebel who breaks rules that do not serve them. Craves freedom and change. Fears powerlessness and being controlled."},
+ {name:"THE RULER",icon:"♛",suspect:"GIANG",desc:"Takes command, values order, status and control. Leads from the front. Fears chaos and losing authority."}
+];
+
+/* Each page is an HTML string. Helpers: kv(rows), sigs(...) below. */
+const kv=r=>'<table>'+r.map(x=>`<tr><td class="k">${x[0]}</td><td>${x[1]}</td></tr>`).join('')+'</table>';
+const sgn=(n,l,s)=>`<div class="sgb">${s?`<span class="sig">${s}</span>`:''}${l}<br><b>${n}</b></div>`;
+
+const documents=[
+{id:"innocent",archetype:"THE INNOCENT",correctSuspect:"ÁNH",title:"International Transfer Record",
+ org:"Thiên Hà Pacific Bank",orgSub:"CORPORATE BANKING • REMITTANCES",ref:"DOC NO. TH-IR-20260311-0482",date:"11 MAR 2026",conf:"CONFIDENTIAL — BANK COPY",
+ pages:[`<h3>International Transfer Record</h3>
+ ${kv([["Account holder","ÁNH"],["Company","V COMPANY LTD."],["Account no.","•••• •••• 7731 (USD)"],["Transaction ID","TXN-INT-88204-VX"],["Value date","11 March 2026"]])}
+ <h4>Transfer details</h4>
+ <table><tr><th>Beneficiary (overseas)</th><th>Purpose</th><th class="r">Amount</th></tr>
+ <tr><td>Calloway &amp; Rhine Holdings S.A.<br><span class="small">Reg. entity, Free Zone — Ref. CRH-4471</span></td><td>Consulting / investment</td><td class="r"><b>USD 4,850,000.00</b></td></tr></table>
+ <h4>Authorisation</h4>
+ <p class="small">Transfer released following dual authorisation. Compliance review status: <b>FLAGGED — FOR FURTHER REVIEW</b>.</p>
+ <h4>Internal reference</h4>
+ <p class="small">Cross-ref: Compliance flag CF-2291. Supporting copies of related correspondence retained under custodian file NL-ARC-06 (N. Lê).</p>
+ <div class="sgs">${sgn("ÁNH","AUTHORISED SIGNATORY","Ánh")}${sgn("T. H. Quân","BANK OFFICER — REMITTANCES","Quân")}</div>`]},
+
+{id:"lover",archetype:"THE LOVER",correctSuspect:"BÌNH",title:"Private Loan Agreement",
+ org:"Private Agreement",orgSub:"CIVIL LOAN • NOTARY COPY",ref:"AGREEMENT NO. PLA-2012-0097",date:"04 SEP 2012",conf:"PRIVATE & CONFIDENTIAL",
+ pages:[`<h3>Private Loan Agreement</h3>
+ ${kv([["Lender","NGỌC"],["Borrower","BÌNH"],["Agreement date","04 September 2012"],["Principal","VND 15,000,000,000"],["Interest rate","38% per annum, compounded monthly"],["Repayment term","30 (thirty) years"]])}
+ <h4>Status of account (at 01 Jan 2026)</h4>
+ ${kv([["Principal repaid","VND 1,120,000,000"],["Interest accrued","VND 62,540,000,000"],["Outstanding balance","<b>VND 76,420,000,000</b>"]])}
+ <p class="small" style="margin-top:14px">Continued on page 2 — conditions of repayment and signatures.</p>`,
+ `<h3>Conditions of Repayment</h3>
+ <p><b>1.</b> Repayment is due on the first day of each month without exception. Any missed instalment accrues a penalty of 5% of the instalment per day.</p>
+ <p><b>2.</b> The Borrower may not settle the principal early without the written consent of the Lender.</p>
+ <p><b>3.</b> The Borrower shall not leave the Lender's employment or service until the balance is fully discharged.</p>
+ <p><b>4.</b> Obligations under this Agreement pass in full to the Borrower's estate in the event of default.</p>
+ <p><b>5.</b> This Agreement may be amended, forgiven or extended solely at the Lender's discretion.</p>
+ <div class="sgs" style="margin-top:50px">${sgn("NGỌC","LENDER","Ngọc")}${sgn("BÌNH","BORROWER","Bình")}</div>
+ <p class="small" style="margin-top:30px">Witnessed — Notary Office No. 3, Hà Nội (fictional). Seal no. 2012/0097.</p>`]},
+
+{id:"creator",archetype:"THE CREATOR",correctSuspect:"CÔNG",title:"Disciplinary Decision",
+ org:"Northbridge Royal Infirmary",orgSub:"HUMAN RESOURCES • MEDICAL STAFF AFFAIRS",ref:"DOC NO. NRI-HR-DD-2019/0316",date:"21 NOV 2019",conf:"STRICTLY CONFIDENTIAL",
+ pages:[`<h3>Disciplinary Decision</h3>
+ ${kv([["Employee","CÔNG"],["Position","Senior Surgical Resident"],["Staff ID","NRI-S-04471"],["Decision no.","DD-2019/0316"],["Internal investigation","Case IC-2019-088 (closed)"]])}
+ <h4>Findings</h4>
+ <p>The Medical Conduct Committee, having reviewed the findings of the internal investigation, determined that the employee committed <b>serious professional misconduct</b> in breach of clinical and ethical standards of this institution.</p>
+ <h4>Decision</h4>
+ <p>Effective 21 November 2019 the employee's contract is <b>terminated</b> with immediate suspension of all clinical privileges. The matter is recorded in the institution's internal register and shall not be disclosed except by order.</p>
+ <div class="sgs" style="margin-top:60px">${sgn("DR. A. HOLLOWAY","DIRECTOR OF HUMAN RESOURCES","Holloway")}${sgn("PROF. M. REYES","CHAIR, MEDICAL CONDUCT COMMITTEE","Reyes")}</div>
+ <div class="stamp" style="bottom:130px">NORTHBRIDGE ROYAL<br>INFIRMARY<br>OFFICIAL SEAL</div>`]},
+
+{id:"sage",archetype:"THE SAGE",correctSuspect:"DUNG",title:"Medical Record & Prescription",
+ org:"Phòng khám Đông Y An Hòa",orgSub:"TRADITIONAL MEDICINE CLINIC (FICTIONAL)",ref:"MRN: AH-0045-2291",date:"09 FEB 2026",conf:"PRIVATE MEDICAL RECORD",
+ pages:[`<h3>Medical Record &amp; Prescription</h3>
+ ${kv([["Patient","DUNG"],["Medical record no.","AH-0045-2291"],["Date of visit","09 February 2026"],["Complaint","Right shoulder and joint pain, worse in cold weather"]])}
+ <h4>Examination notes</h4>
+ <p>Limited range of motion in right shoulder. Tenderness around joint capsule. No swelling, no fever. Pain reported 6/10 at night.</p>
+ <h4>Diagnosis</h4>
+ <p>Chronic periarthritis of the shoulder (cold-damp pattern).</p>
+ <h4>Prescription — topical use</h4>
+ <table><tr><th>Preparation</th><th>Ingredient</th><th>Use</th></tr>
+ <tr><td>Herbal liniment (external)</td><td>Rễ cây phụ tử<br><span class="small">+ quế chi, ngải cứu, rượu thuốc</span></td><td>Apply to shoulder, twice daily, 14 days</td></tr></table>
+ <p class="small">Follow-up in 2 weeks.</p>
+ <div class="sgs" style="margin-top:50px">${sgn("DR. LÊ AN HÒA","ATTENDING PHYSICIAN","An Hòa")}${sgn("","CLINIC SEAL")}</div>
+ <div class="stamp" style="bottom:140px;right:60px">AN HÒA CLINIC<br>VERIFIED</div>`]},
+
+{id:"outlaw",archetype:"THE OUTLAW",correctSuspect:"ETHAN",title:"Personnel & Background Record",
+ org:"Minh Phúc Foundation",orgSub:"YOUTH SPONSORSHIP PROGRAMME • HR OFFICE",ref:"PERSONNEL ID: MPF-2016-0213",date:"15 JUN 2016",conf:"CONFIDENTIAL — RESTRICTED",
+ pages:[`<h3>Personnel &amp; Background Record</h3>
+ ${kv([["Full name","ETHAN"],["Personnel ID","MPF-2016-0213"],["Date of birth","02 March 1998"],["Family background","Orphan; raised in state care (Sunrise Home No. 2)"],["Sponsor","Minh Phúc Foundation — Chairman MINH"]])}
+ <h4>Employment history</h4>
+ <table><tr><th>Period</th><th>Position</th><th>Employer</th></tr>
+ <tr><td>2015 – 2016</td><td>Bar staff</td><td>The Brass Anchor Bar</td></tr>
+ <tr><td>2016 – present</td><td>Junior hospitality associate</td><td>Minh Phúc Group</td></tr></table>
+ <h4>Sponsorship</h4>
+ <p>Sponsorship granted 15 June 2016 under charitable scholarship scheme MPF-YS/16.</p>
+ <h4>Confidential remarks</h4>
+ <p class="small"><i>"Case taken personally by the Chairman. File exempt from standard review. Sealed addendum held by chairman's office. Do not discuss with subject."</i></p>
+ <div class="sgs" style="margin-top:36px">${sgn("HR OFFICE","RECORD KEEPER","Hà")}${sgn("MINH","CHAIRMAN","Minh")}</div>`]},
+
+{id:"ruler",archetype:"THE RULER",correctSuspect:"GIANG",title:"Internal Financial Review",
+ org:"V COMPANY LTD.",orgSub:"INTERNAL AUDIT • BRANCH REVIEW",ref:"REVIEW NO. IA-BY-2025-017",date:"30 NOV 2025",conf:"INTERNAL — DO NOT DISTRIBUTE",
+ pages:[`<h3>Internal Financial Review — Branch Y</h3>
+ ${kv([["Branch","Branch Y"],["Branch director","GIANG"],["Review period","Q2 – Q3 2025"],["Subject","Real-estate investment, Lakeshore Land Holdings"]])}
+ <h4>Transaction table</h4>
+ <table><tr><th>Date</th><th>Ref.</th><th>Payee</th><th class="r">VND</th></tr>
+ <tr><td>14 Jun 2025</td><td>BY-TR-0612</td><td>Lakeshore Land Holdings</td><td class="r">8,500,000,000</td></tr>
+ <tr><td>29 Jul 2025</td><td>BY-TR-0731</td><td>Lakeshore Land Holdings</td><td class="r">6,200,000,000</td></tr>
+ <tr><td>03 Sep 2025</td><td>BY-TR-0904</td><td>G. Realty Trust (private)</td><td class="r">9,750,000,000</td></tr>
+ <tr><td colspan="3"><b>Total</b></td><td class="r"><b>24,450,000,000</b></td></tr></table>
+ <h4>Authorisation</h4>
+ <p class="small">All three transfers authorised solely by the Branch Director. No Board resolution or budget line located for a property investment.</p>
+ <h4>Reviewer's note</h4>
+ <p class="small"><i>Funds booked as "branch operating expenses". Payee accounts appear linked to a private trust. Escalate to Board Audit Committee before 31 Dec.</i></p>
+ <div class="sgs" style="margin-top:34px">${sgn("INTERNAL AUDIT","LEAD REVIEWER","Thu")}${sgn("GIANG","BRANCH DIRECTOR","Giang")}</div>`]}
+];
+/* ============ END CONFIG ============ */
+
+const KEY="ngoc_archive_v1";
+let S={unlocked:false,solved:[]};
+try{S=Object.assign(S,JSON.parse(localStorage.getItem(KEY)||"{}"))}catch(e){}
+S.unlocked=false;
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({solved:S.solved}))}catch(e){}};
+let view="landing",cur=null,sel=null,verified=false,pg=0,Z=1;
+const $=s=>document.querySelector(s),app=$("#app");
+const foot='<div class="foot">FICTIONAL GAME ARCHIVE<br>PROPERTY OF NGỌC</div>';
+const chk='<svg class="chk" viewBox="0 0 80 80"><circle cx="40" cy="40" r="34"/><path d="M24 41l11 11 21-24"/></svg>';
+
+function render(){
+ let h="";
+ if(view==="landing")h=`<div class="wrap c"><div class="mark">♚</div><h1>NGỌC'S LAPTOP</h1><div class="sub">PRIVATE ARCHIVE</div><button class="btn fill" data-a="go-lock">ACCESS SYSTEM</button></div>${foot}`;
+ else if(view==="lock")h=`<div class="wrap c"><div class="lk">SYSTEM LOCKED</div><div class="sub" style="margin:10px 0 0;letter-spacing:.25em">ENTER PASSWORD</div><input id="pw" type="password" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Password"><div class="err" id="er"></div><button class="btn fill" id="pb" data-a="try-pw">AUTHENTICATE</button><div class="hint"><div class="hl">GỢI Ý MẬT KHẨU</div><div class="slots">${CONFIG.password.split("").map(()=>"<i></i>").join("")}</div><div class="hc">${CONFIG.password.length} CHỮ CÁI</div><p class="serif">“${CONFIG.hint}”</p></div></div>${foot}`;
+ else if(view==="granted")h=`<div class="wrap c">${chk}<h1 style="font-size:28px">ACCESS GRANTED</h1><div class="sub">WELCOME</div></div>`;
+ else if(view==="archive")h=`<div class="ah"><h2>NGỌC'S PRIVATE ARCHIVE</h2><p>${documents.length} DOCUMENTS FOUND</p></div><div class="grid">${documents.map((d,i)=>{const a=archetypes.find(x=>x.name===d.archetype),s=S.solved.includes(d.id);return `<button class="card" data-a="open" data-i="${i}">${s?'<span class="st">UNLOCKED</span>':''}<span class="ic">${a?a.icon:'▤'}</span><span><span class="f">FILE_0${i+1}.pdf</span><br><span class="n">${d.archetype}</span></span></button>`}).join("")}</div>${foot}`;
+ else if(view==="challenge"){const d=documents[cur],a=archetypes.find(x=>x.name===d.archetype);
+  h=`<div class="top"><button class="ib" data-a="back" aria-label="Back">←</button><div class="t">ARCHIVE</div></div><div class="wrap c"><div class="mark" style="margin-bottom:8px">${a?a.icon:''}</div><h1 style="font-size:30px">${d.archetype}</h1>`+
+  (verified?`<div class="unl">${chk}<div class="lk" style="color:var(--ok)">IDENTITY VERIFIED<br>ACCESS GRANTED</div><br><button class="btn fill" data-a="view">OPEN DOCUMENT</button></div>`:
+  `<div class="q">WHO DOES THIS FILE BELONG TO?</div><div class="sg">${CONFIG.suspects.map(s=>`<button class="sp ${sel===s?'on':''}" data-a="sel" data-s="${s}">${s}</button>`).join("")}</div><div class="err" id="er"></div><button class="btn fill" id="ab" data-a="check" ${sel?'':'disabled'}>ACCESS DOCUMENT</button><button class="btn dim" data-a="ref">VIEW ARCHETYPE REFERENCE</button>`)+`</div>${foot}`;}
+ else if(view==="viewer"){const d=documents[cur];
+  h=`<div class="vw"><div class="top"><button class="ib" data-a="back" aria-label="Back">←</button><div class="t">${d.title.toUpperCase()}</div><button class="ib" data-a="zo">−</button><button class="ib" data-a="zi">+</button></div><div class="sc"><div class="pw" id="pw2"><div class="paper" id="pp">${page(d)}</div></div></div><div class="bar"><button class="ib" data-a="prev" ${pg<1?'disabled':''}>‹</button><div class="pg">PAGE ${pg+1} / ${d.pages.length}</div><button class="ib" data-a="next" ${pg>=d.pages.length-1?'disabled':''}>›</button></div></div>`;}
+ app.innerHTML=h;
+ if(view==="viewer")fit();
+}
+function page(d){return `<div class="lh"><div><div class="o">${d.org}</div><div class="os">${d.orgSub}</div></div><div class="r">${d.ref}<br>DATE: ${d.date}<br>FICTIONAL RECORD</div></div><span class="cf">${d.conf}</span>${d.pages[pg]}<div class="pf"><span>${d.ref.split(' ').pop()}</span><span>FICTIONAL GAME PROP</span><span>PAGE ${pg+1} OF ${d.pages.length}</span></div>`}
+function fit(){const p=$("#pp"),w=$("#pw2");if(!p)return;const s=Math.max(.3,(innerWidth-16)/595)*Z;p.style.transform=`scale(${s})`;w.style.width=595*s+"px";w.style.height=p.offsetHeight*s+"px"}
+addEventListener("resize",fit);
+
+function go(v){view=v;render();scrollTo(0,0)}
+function err(m){const e=$("#er");if(e)e.innerHTML=m}
+function bump(id){const b=$("#"+id);if(b){b.classList.remove("shake");void b.offsetWidth;b.classList.add("shake")}}
+
+app.addEventListener("click",e=>{
+ const t=e.target.closest("[data-a]");if(!t)return;const a=t.dataset.a;
+ if(a==="go-lock")go("lock");
+ else if(a==="try-pw"){const v=$("#pw").value.trim().toUpperCase();
+  if(v===CONFIG.password.toUpperCase()){S.unlocked=true;save();view="granted";render();setTimeout(()=>go("archive"),1500)}
+  else{err("ACCESS DENIED<br>INVALID PASSWORD");bump("pb")}}
+ else if(a==="open"){cur=+t.dataset.i;sel=null;pg=0;Z=1;verified=false;go(S.solved.includes(documents[cur].id)?"viewer":"challenge")}
+ else if(a==="sel"){sel=t.dataset.s;render()}
+ else if(a==="check"){if(sel===documents[cur].correctSuspect){verified=true;if(!S.solved.includes(documents[cur].id))S.solved.push(documents[cur].id);save();render()}
+  else{err("ACCESS DENIED<br>The selected identity does not match this document.");bump("ab")}}
+ else if(a==="view"){pg=0;Z=1;go("viewer")}
+ else if(a==="back")go(view==="viewer"&&!S.solved.includes(documents[cur].id)?"challenge":"archive");
+ else if(a==="ref")refSheet();
+ else if(a==="zi"){Z=Math.min(3,Z+.35);fit()}
+ else if(a==="zo"){Z=Math.max(.6,Z-.35);fit()}
+ else if(a==="prev"){pg--;render()}
+ else if(a==="next"){pg++;render()}
+ else if(a==="close")$(".sheet").remove();
+});
+app.addEventListener("keydown",e=>{if(e.key==="Enter"&&view==="lock")$("#pb").click()});
+function refSheet(){const s=document.createElement("div");s.className="sheet";
+ s.innerHTML=`<div class="sh"><div class="lk" style="margin-bottom:6px">ARCHETYPE REFERENCE</div>${archetypes.map(a=>`<div class="ar"><div class="i">${a.icon}</div><div><b>${a.name}</b><p>${a.desc}</p></div></div>`).join("")}<br><button class="btn" data-a="close">CLOSE</button></div>`;
+ s.addEventListener("click",e=>{if(e.target===s)s.remove()});app.appendChild(s)}
+render();
+</script></body></html>
